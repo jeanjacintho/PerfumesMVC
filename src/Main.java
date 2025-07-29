@@ -21,6 +21,7 @@ public class Main {
     public static void menu(FabricanteController fabricanteController, PerfumeController perfumeController) {
 
         while(true) {
+            System.out.println("\n*** MENU PERFUMES ***");
             System.out.println("1 - Cadastrar perfume");
             System.out.println("2 - Mostrar perfume");
             System.out.println("3 - Remover perfume");
@@ -29,12 +30,18 @@ public class Main {
             System.out.println("6 - Mostrar fabricante");
             System.out.println("7 - Remover fabricante");
             System.out.println("0 - Sair");
+            System.out.println("*************************\n");
+            System.out.print("Opção: ");
             int op = scan.nextInt();
             if(op == 0) break;
 
             switch (op) {
                 case 1:
-                    perfumeController.cadastrarPerfume(perfumes, fabricanteController, fabricantes);
+                    if(!fabricantes.isEmpty()) {
+                        perfumeController.cadastrarPerfume(perfumes, fabricanteController, fabricantes);
+                    } else {
+                        System.out.println("Cadastre um fabricante primeiro");
+                    }
                     break;
                 case 2:
                     perfumeController.mostrarPerfumes(perfumes);
@@ -64,11 +71,13 @@ public class Main {
     public static void menuMostrarPor(PerfumeController perfumeController) {
         Scanner scan = new Scanner(System.in);
         while(true) {
+            System.out.println("\n*** FILTRAR POR: ***");
             System.out.println("1 - Fabricante");
             System.out.println("2 - Notas");
             System.out.println("3 - Fragancia");
             System.out.println("4 - Preço");
             System.out.println("0 - Sair");
+            System.out.println("***********************\n");
             int op = scan.nextInt();
             if(op == 0) break;
 

@@ -17,7 +17,7 @@ public class FabricanteController {
 
     public void mostrarFabricantes(ArrayList<Fabricante> fabricantes) {
         for (Fabricante fabricante : fabricantes) {
-           fabricante.toString();
+            System.out.println(fabricante.toString());
         }
     }
 

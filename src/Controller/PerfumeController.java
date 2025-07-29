@@ -86,7 +86,7 @@ public class PerfumeController {
 
     public void mostrarPerfumes(ArrayList<Perfume> perfumes) {
         for (Perfume perfume : perfumes) {
-            perfume.toString();
+            System.out.println(perfume.toString());
         }
     }
 
